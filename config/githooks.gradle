@@ -1,0 +1,9 @@
+task installGitHook(type: Copy) {
+    from new File("${rootDir}/githooks/", 'pre-push')
+    into { new File(rootProject.rootDir, '.git/hooks') }
+    fileMode 0777
+}
+
+afterEvaluate {
+    tasks.getByPath(':kotlin_app:preBuild').dependsOn installGitHook
+}

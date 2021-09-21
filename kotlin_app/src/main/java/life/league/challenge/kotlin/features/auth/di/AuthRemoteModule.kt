@@ -9,7 +9,6 @@ import life.league.challenge.kotlin.BuildConfig
 import life.league.challenge.kotlin.features.auth.contract.LoginRemote
 import life.league.challenge.kotlin.features.auth.remote.LoginApiService
 import life.league.challenge.kotlin.features.auth.remote.impl.LoginRemoteImpl
-import life.league.challenge.kotlin.features.posts.contract.GetPostRemote
 import life.league.challenge.kotlin.libraries.remote.RemoteFactory
 import javax.inject.Singleton
 

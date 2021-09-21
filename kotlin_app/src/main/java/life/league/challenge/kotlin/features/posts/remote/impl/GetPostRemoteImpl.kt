@@ -1,7 +1,6 @@
 package life.league.challenge.kotlin.features.posts.remote.impl
 
 import life.league.challenge.kotlin.features.auth.contract.LoginRemote
-import life.league.challenge.kotlin.features.auth.remote.LoginApiService
 import life.league.challenge.kotlin.features.posts.contract.GetPostRemote
 import life.league.challenge.kotlin.features.posts.remote.ApiService
 import life.league.challenge.kotlin.features.users.contract.GetUserByIdRemote
@@ -17,8 +16,8 @@ internal class GetPostRemoteImpl @Inject constructor(
     override suspend fun getPosts(): List<Post> {
         val apiToken = loginApiService.login().apiKey
         val users = userByIdRemote.getUserById(apiToken)
-        return apiService.getPosts(apiToken).map {post ->
-            val currentUser  = users.find { it.id  == post.userId }
+        return apiService.getPosts(apiToken).map { post ->
+            val currentUser = users.find { it.id == post.userId }
             post.imageUrl = currentUser?.avatar?.medium
             post.author = currentUser?.name
             post

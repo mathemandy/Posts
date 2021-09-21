@@ -7,5 +7,5 @@ import retrofit2.http.Header
 interface ApiService {
 
     @GET("posts")
-    suspend fun getPosts(@Header("x-access-token") apiToken : String?): List<Post>
+    suspend fun getPosts(@Header("x-access-token") apiToken: String?): List<Post>
 }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 internal class GetUserByIdRemoteImpl @Inject constructor(
     private val apiService: UserApiService
-) : GetUserByIdRemote{
+) : GetUserByIdRemote {
     override suspend fun getUserById(key: String?): List<User> {
         return apiService.getUserById(key)
     }

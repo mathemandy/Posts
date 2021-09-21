@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compiled_sdk_version"]
+    buildToolsVersion globalConfiguration["build_tools_version"]
+
+
+    defaultConfig {
+        applicationId globalConfiguration["application_id"]
+        minSdkVersion globalConfiguration["min_sdk_version"]
+        targetSdkVersion globalConfiguration["target_sdk_version"]
+        versionCode globalConfiguration["version_code"]
+        versionName globalConfiguration["version_name"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        buildConfigField ("String", "BASE_URL", "\"https://engineering.league.dev/challenge/api/\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion globalConfiguration["compose_version"]
+        kotlinCompilerVersion globalConfiguration["kotlin_compiler_version"]
+    }
+}
+
+// Feel free to add, remove or change dependencies as you see fit
+dependencies {
+    def dependencies = rootProject.ext.applicationDependencies
+    def testDependencies = rootProject.ext.testDependencies
+
+    implementation dependencies.kotlin_core
+    implementation dependencies.appcompat
+    implementation dependencies.material_design
+    implementation dependencies.compose_ui
+    implementation dependencies.compose_material
+    implementation dependencies.compose_preview
+    implementation dependencies.lifecycle_runtime
+    implementation dependencies.activity_compose
+
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.x_junit
+    androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.compose_ui
+
+    implementation dependencies.hilt_android
+    kapt dependencies.hilt_android_compiler
+    implementation dependencies.hilt_viewmodel
+    kapt dependencies.hilt_compiler
+    implementation dependencies.hilt_navigation
+
+    implementation dependencies.compose_livedata
+    implementation dependencies.constrain_compose
+
+    implementation dependencies.coil
+    implementation dependencies.retrofit
+    implementation dependencies.okhttp_logger
+    implementation dependencies.moshi
+    implementation dependencies.moshi_converter
+
+}

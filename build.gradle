@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import io.gitlab.arturbosch.detekt.Detekt
+
+buildscript {
+    ext.kotlin_version = '1.5.10'
+    ext.hilt_version = '2.38.1'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.0"
+    }
+}
+
+apply from: 'config/dependencies.gradle'
+apply from: 'config/githooks.gradle'
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects { subproject ->
+
+    detekt {
+        baseline = file("${rootProject.rootDir}/detekt/baseline/detekt-baseline.xml")
+        config = files("${rootProject.rootDir}/detekt/detekt-config.yml")
+        buildUponDefaultConfig = true
+        disableDefaultRuleSets = false
+        debug = false
+        ignoreFailures = false
+        reports {
+            xml {
+                enabled = false
+            }
+            html {
+                enabled = false
+            }
+            txt {
+                enabled = false
+            }
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
