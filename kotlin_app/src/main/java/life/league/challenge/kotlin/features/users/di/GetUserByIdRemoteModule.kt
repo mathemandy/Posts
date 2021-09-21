@@ -6,9 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import life.league.challenge.kotlin.BuildConfig
-import life.league.challenge.kotlin.features.users.contract.GetUserByIdRemote
+import life.league.challenge.kotlin.features.users.contract.GetUsersRemote
 import life.league.challenge.kotlin.features.users.remote.UserApiService
-import life.league.challenge.kotlin.features.users.remote.impl.GetUserByIdRemoteImpl
+import life.league.challenge.kotlin.features.users.remote.impl.GetUsersRemoteImpl
 import life.league.challenge.kotlin.libraries.remote.RemoteFactory
 import javax.inject.Singleton
 
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 internal interface GetUserByIdRemoteModule {
 
     @get:Binds
-    val GetUserByIdRemoteImpl.bindGetUserById: GetUserByIdRemote
+    val GetUsersRemoteImpl.bindGetUsers: GetUsersRemote
 
     companion object {
         @[Provides Singleton]

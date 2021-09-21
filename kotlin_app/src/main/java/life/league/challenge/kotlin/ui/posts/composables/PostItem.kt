@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,7 +27,12 @@ import life.league.challenge.kotlin.ui.composables.PrimaryText
 @Composable
 fun PostItem(post: Post) {
     val painter = rememberImagePainter("${post.imageUrl}")
-    Column(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(16.dp)) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(16.dp)
+    ) {
         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             Image(
                 painter = painter,
@@ -50,5 +56,8 @@ fun PostItem(post: Post) {
             maxLines = 3,
             text = "${post.body}",
         )
+
+        Spacer(modifier = Modifier.height(8.dp))
+        Divider(modifier = Modifier.fillMaxWidth())
     }
 }

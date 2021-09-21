@@ -7,20 +7,20 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.hilt.navigation.compose.hiltViewModel
+import life.league.challenge.kotlin.R
 import life.league.challenge.kotlin.ui.posts.Posts
 
 @Composable
 fun App() {
-    val viewModel = hiltViewModel<AppViewModel>()
 
     Box {
         Scaffold(
             topBar = {
                 TopAppBar(
                     title = {
-                        Text(text = "Posts", textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+                        Text(text = stringResource(id = R.string.posts), textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
                     }
                 )
             },

@@ -23,7 +23,7 @@ android {
             useSupportLibrary true
         }
 
-        buildConfigField ("String", "BASE_URL", "\"https://engineering.league.dev/challenge/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://engineering.league.dev/challenge/api/\"")
     }
 
     buildTypes {
@@ -49,6 +49,12 @@ android {
         kotlinCompilerExtensionVersion globalConfiguration["compose_version"]
         kotlinCompilerVersion globalConfiguration["kotlin_compiler_version"]
     }
+
+    kotlinOptions {
+        freeCompilerArgs += [
+                '-Xopt-in=kotlin.time.ExperimentalTime',
+        ]
+    }
 }
 
 // Feel free to add, remove or change dependencies as you see fit
@@ -69,6 +75,8 @@ dependencies {
     androidTestImplementation testDependencies.x_junit
     androidTestImplementation testDependencies.espresso
     androidTestImplementation testDependencies.compose_ui
+    testImplementation testDependencies.mockwebserver
+    testImplementation testDependencies.kotlin_coroutine
 
     implementation dependencies.hilt_android
     kapt dependencies.hilt_android_compiler
@@ -84,5 +92,9 @@ dependencies {
     implementation dependencies.okhttp_logger
     implementation dependencies.moshi
     implementation dependencies.moshi_converter
+    implementation testDependencies.truth
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.turbine
+
 
 }
