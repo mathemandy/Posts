@@ -19,7 +19,6 @@ To build this project, you require:
 - Gradle 7.0.0+
 - You may require Java 11 to run, see [Process.md](https://github.com/mathemandy/league-test/blob/master/Process.md) for walkthrough
 
-## Screenshots
 <h2 align="left">Screenshots</h2>
 <h4 align="center">
 <img src="https://user-images.githubusercontent.com/6526607/134254829-e41eae80-67f8-471b-874f-bb807c2d871d.jpg" width="30%" vspace="10" hspace="10">
