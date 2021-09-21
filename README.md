@@ -3,6 +3,8 @@
 This project implements a scrollable list of posts.
 For each post, it shows the author name, post title, the post body and the author image
 
+See [Process.md]() for walkthrough
+
 ## Features
 * MVVM
 * Kotlin Coroutines with Flow (State Flow)
@@ -16,6 +18,12 @@ To build this project, you require:
 - Android Studio arctic fox
 - Gradle 7.0.0+
 
+## Screenshots
+<h2 align="left">Screenshots</h2>
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/6526607/134254829-e41eae80-67f8-471b-874f-bb807c2d871d.jpg" width="30%" vspace="10" hspace="10">
+<img src="https://user-images.githubusercontent.com/6526607/134254836-2be2d7b4-9e3c-4554-92f9-92eb87896b79.jpg" width="30%" vspace="10" hspace="10"><br>
+  
 
 ## Libraries
 
