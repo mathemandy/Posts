@@ -3,7 +3,7 @@
 This project implements a scrollable list of posts.
 For each post, it shows the author name, post title, the post body and the author image
 
-See [Process.md]() for walkthrough
+See [Process.md](https://github.com/mathemandy/league-test/blob/master/Process.md) for walkthrough
 
 ## Features
 * MVVM
@@ -17,6 +17,7 @@ See [Process.md]() for walkthrough
 To build this project, you require:
 - Android Studio arctic fox
 - Gradle 7.0.0+
+- You may require Java 11 to run, see [Process.md](https://github.com/mathemandy/league-test/blob/master/Process.md) for walkthrough
 
 ## Screenshots
 <h2 align="left">Screenshots</h2>
