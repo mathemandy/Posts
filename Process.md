@@ -17,7 +17,12 @@ To build this project, you require:
 - Gradle 7.0.0+
 - you may be required to use Java-11 to build the project.  See Screenshots below
 
-
+## Screenshots
+<h2 align="left">Screenshots</h2>
+<h4 align="center">
+<img src="https://user-images.githubusercontent.com/6526607/134254829-e41eae80-67f8-471b-874f-bb807c2d871d.jpg" width="30%" vspace="10" hspace="10">
+<img src="https://user-images.githubusercontent.com/6526607/134254836-2be2d7b4-9e3c-4554-92f9-92eb87896b79.jpg" width="30%" vspace="10" hspace="10"><br>
+  
 ## Design
 A Simple Design was provided and it was easy to follow. The Choice of Jepack was because of the speed and easy-ness to create simple and amazing UIs.
 
@@ -36,5 +41,11 @@ The test can do with UI tests that verify that the view state is rendered as exp
 The project uses ktlint and Detekt to enforce proper code style. Also a pre-push githook has been added to ensure that this checks are done before pushing to the server.
 
 ## Building issue that may arise.
+  
+  
+  <img width="986" alt="Screenshot 2021-09-20 at 19 30 58" src="https://user-images.githubusercontent.com/6526607/134255132-11423c33-c4d9-4d29-9479-7265e4711094.png">
+<img width="1611" alt="Screenshot 2021-09-20 at 19 31 16" src="https://user-images.githubusercontent.com/6526607/134255135-d43103ba-a37d-4aec-b409-a7a6b9a57f8e.png">
+
+  
 
 
